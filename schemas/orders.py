@@ -21,7 +21,7 @@ class OrderCreate(BaseModel):
                 status_code=400,
                 detail="Прогулка может начинаться только в начале часа или в половину."
             )
-        if start_time.hour < 7 or start_time.hour > 23:
+        if start_time.hour < 7 or start_time.hour > 22:
             raise HTTPException(
                 status_code=400,
                 detail="Прогулка может быть только между 7:00 и 23:00."
