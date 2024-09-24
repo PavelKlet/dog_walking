@@ -15,6 +15,5 @@ async def get_orders(order_date: date, order_service: OrderServiceDep):
 @router.post("/orders/")
 async def create_order(order: OrderCreate, order_service: OrderServiceDep):
     order_data = order.dict()
-    print(order_data)
     new_order = await order_service.create_order(order_data)
     return new_order
